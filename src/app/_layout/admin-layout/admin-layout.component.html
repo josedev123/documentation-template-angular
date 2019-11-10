@@ -1,0 +1,18 @@
+
+      <nav class="header-wrap">
+        <div class="container">
+          <div class="d-flex">
+
+              <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                  <li *ngIf="isLoggedIn"><a href="#" (click)="onLogoutclick()" class="nav-link pull-right">Logout {{ loggedInUser }}</a></li>
+              </ul>
+
+          </div>
+        </div>
+
+      </nav> 
+<main class="col-md-9 ml-sm-auto col-lg-10 px-4 container">
+<flash-messages></flash-messages>
+<router-outlet></router-outlet>
+</main>
+

@@ -1,0 +1,18 @@
+<nav class="header-wrap">
+        <div class="container">
+            <a class="navbar-brand oneims-brand" [routerLink]="['/']" routerLinkActive="router-link-active" >
+              <img src="https://o9hmd9et76rakaz3j1dxf8l4-wpengine.netdna-ssl.com/wp-content/themes/oneims-latest/logo/oneims.svg" alt="OneIMS" width="150">
+          </a>
+        </div>
+
+      </nav>
+      <div class="d-flex">
+    <nav class="col-md-2 d-none d-md-block bg-light">
+          <div class="sidebar-sticky">
+      <app-view-navigation></app-view-navigation>
+    </div>
+    </nav>
+<main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+<router-outlet></router-outlet>
+</main>
+</div>
