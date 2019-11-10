@@ -28,6 +28,7 @@ const routes: Routes = [
           path: 'admin',
           component: AdminLayoutComponent, canActivate: [AuthGuard],
           children: [
+            { path: '', component: DashboardComponent},
             {path: 'documents', component: DocumentsComponent},
             {path: 'documents/edit/:id', component: EditDocumentComponent},
             {path: 'documents/add', component: AddDocumentComponent},

@@ -16,7 +16,7 @@ export class DocumentService {
   zDocument: Observable<ZDocument>;
 
   constructor(private afs: AngularFirestore) {
-    this.zDocumentsCollection = this.afs.collection('/blueprint-1');
+    this.zDocumentsCollection = this.afs.collection('/blueprint-1', ref => ref.orderBy('order'));
   }
 
   getDocuments(): Observable<ZDocument[]> {

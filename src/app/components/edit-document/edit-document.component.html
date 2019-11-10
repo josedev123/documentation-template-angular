@@ -31,8 +31,22 @@
       </div>
       <div class="form-group"> 
       <ejs-richtexteditor [(value)]='document.content' required name="content" [(ngModel)]="document.content" ></ejs-richtexteditor>
+      <div class="form-group">
+          <label for="order">Sort Order</label>
+          <input 
+            type="text"
+            class="form-control" 
+            name="order" 
+            #title="ngModel" 
+            [(ngModel)]="document.order"
+          >
+        </div>
+
       <button type="submit" class="btn btn-primary" ejs-button>Submit</button>    
   </div>
 </form>
+
+<button type="button" class="btn btn-danger mt-2" (click)="onClickDelete()">Delete</button>    
+
       </div>
       </div>

@@ -1,11 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-.header-wrap{
-    position: relative;
-    min-height: 50px;
-    margin-bottom: 20px;
-    border: 1px solid #f0f0f0;
-    padding:15px 0px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+body{font-family: 'Roboto', sans-serif;
 }
-
+.header-wrap{
+    position: fixed; left:0px;top:0; width:100%;
+    background: #11284f;
+    padding:5px 0px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    height: 60px;
+}
+.header-wrap .navbar-brand img{width: 110px;margin: 0px  30px;}
 .flash-message-container{position: fixed; width:50%; bottom:0; right:0;}
+
+.dd-list{list-style: none;margin: 0;padding:0;}
+
+.dd-list li{margin:5px 0px; border: 1px solid #ddd; padding:15px;}
+.body-area{margin-top: 60px;}
+
+.left-sidebar{position: fixed;width:260px;left:0px; bottom:0px;top:60px;background: #32AAEB;padding-top:15px;}
+.main-content{margin-left:260px;max-width:1000px;padding:40px;}
+
+.left-sidebar ul li a{display: block;color:#fff;padding:8px 20px;font-size: 1.4rem;font-size:16px;
+    font-weight: 600;text-transform: uppercase;transition:all 300ms ease;}
+
+    .left-sidebar ul li a:hover{text-decoration: none;background: rgba(255,255,255,0.3);}
+
+    .left-sidebar ul li.nav-item.active a{background: rgba(255,255,255,0.3);background: #11284f;}

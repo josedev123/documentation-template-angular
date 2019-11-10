@@ -15,7 +15,8 @@ export class AddDocumentComponent implements OnInit {
 
 document: ZDocument = {
   title : '',
-  content: ''
+  content: '',
+  order: 100
 
 };
 
@@ -42,7 +43,7 @@ document: ZDocument = {
         cssClass: 'alert-success', timeout: 4000
       });
       // redirect to dashboard
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/admin/dashboard']);
 
     }
 

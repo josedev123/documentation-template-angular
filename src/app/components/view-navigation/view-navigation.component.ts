@@ -16,7 +16,7 @@ export class ViewNavigationComponent implements OnInit {
 
   constructor(private documentService: DocumentService, private afs: AngularFirestore) {
 
-    afs.collection('/blueprint-1').valueChanges().subscribe(xdocuments => {
+    afs.collection('/blueprint-1', ref => ref.orderBy('order')).valueChanges().subscribe(xdocuments => {
         this.xdocuments = xdocuments;
     });
 
