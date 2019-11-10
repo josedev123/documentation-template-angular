@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { FormsModule } from '@angular/Forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddDocumentComponent } from './components/add-document/add-document.component';
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.compon
   ],
   imports: [
     BrowserModule,
+    RichTextEditorAllModule,
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -52,7 +55,8 @@ import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.compon
   ],
   providers: [
     DocumentService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { ZDocument } from 'src/app/models/DocumentModel';
 import { DocumentService } from 'src/app/services/document.service';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { slugify } from 'src/app/utilities/slugify';
 
@@ -27,7 +24,6 @@ export class EditDocumentComponent implements OnInit {
 
   constructor(
     private documentService: DocumentService,
-    private router: Router,
     private route: ActivatedRoute,
     private flashMessage: FlashMessagesService  ) { }
 
@@ -51,7 +47,7 @@ export class EditDocumentComponent implements OnInit {
       value.slug = slugify(value.title);
       value.id = this.route.snapshot.params.id;
 
-      if (!value.content){
+      if (!value.content) {
         value.content = '';
       }
 

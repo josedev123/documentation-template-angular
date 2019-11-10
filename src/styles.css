@@ -7,3 +7,5 @@
     padding:15px 0px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
 }
+
+.flash-message-container{position: fixed; width:50%; bottom:0; right:0;}

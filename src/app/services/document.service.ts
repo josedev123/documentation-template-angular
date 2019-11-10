@@ -28,7 +28,7 @@ export class DocumentService {
         data.id = action.payload.doc.id;
         return data;
       });
-    }));;
+    }));
     return this.zDocuments;
   }
 

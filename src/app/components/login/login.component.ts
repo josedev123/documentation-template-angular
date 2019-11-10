@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/admin/dashboard']);
       })
       .catch(err => {
-        this.flashMessage.show(err.message, {
+    /*    this.flashMessage.show('error', {
           cssClass: 'alert-success', timeout: 4000
-        });
+        });*/
       });
   }
 

@@ -14,35 +14,25 @@
       Edit Document
     </div>
     <div class="card-body">
-      <form #documentForm="ngForm" (ngSubmit)="onSubmit(documentForm)">
-          <div class="form-group">
-              <label for="title">Title</label>
-              <input 
-                type="text"
-                class="form-control" 
-                name="title" 
-                #title="ngModel" 
-                [(ngModel)]="document.title"
-                [ngClass]="{'is-invalid': title.errors && title.touched}"
-                required
-              >
-      
-              <div [hidden]="!title.errors?.required" class="invalid-feedback">Title required</div>
-            </div>
+<form #form='ngForm' (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input 
+          type="text"
+          class="form-control" 
+          name="title" 
+          #title="ngModel" 
+          [(ngModel)]="document.title"
+          [ngClass]="{'is-invalid': title.errors && title.touched}"
+          required
+        >
 
-            <div class="form-group">
-                <label for="content">Content</label>
-                <textarea
-                  class="form-control" 
-                  name="content" 
-                  #description="ngModel" 
-                  [(ngModel)]="document.content"
-                ></textarea>
-        
-              </div>
-
-            <input type="submit" value="Submit" class="btn btn-primary btn-block">
-
-      </form>
+        <div [hidden]="!title.errors?.required" class="invalid-feedback">Title required</div>
+      </div>
+      <div class="form-group"> 
+      <ejs-richtexteditor [(value)]='document.content' required name="content" [(ngModel)]="document.content" ></ejs-richtexteditor>
+      <button type="submit" class="btn btn-primary" ejs-button>Submit</button>    
+  </div>
+</form>
       </div>
       </div>

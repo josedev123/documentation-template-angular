@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddDocumentComponent } from './components/add-document/add-document.component';
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 
@@ -25,16 +26,15 @@ const routes: Routes = [
         // App routes goes here
     {
           path: 'admin',
-          component: AdminLayoutComponent,
+          component: AdminLayoutComponent, canActivate: [AuthGuard],
           children: [
             {path: 'documents', component: DocumentsComponent},
             {path: 'documents/edit/:id', component: EditDocumentComponent},
             {path: 'documents/add', component: AddDocumentComponent},
-            {path: 'login', component: LoginComponent},
             {path: 'dashboard', component: DashboardComponent}
           ]
     },
-
+    {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
