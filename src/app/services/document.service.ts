@@ -55,9 +55,9 @@ export class DocumentService {
   }
 
   deleteDocument(zDocument: ZDocument) {
-    this.zDocumentDoc = this.afs.doc(`blueprint-1/${zDocument.id}`);
-    console.log(this.zDocumentDoc);
-    this.afs.collection('blueprint-1').doc(zDocument.id).delete().then( res => console.log(res));
+    this.afs.collection('blueprint-1').doc(zDocument.id).delete();
+    
+  //  this.afs.collection('blueprint-1').doc(zDocument.id).delete().then( res => console.log(res));
   }
 
 }

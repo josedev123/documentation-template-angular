@@ -38,7 +38,7 @@ constructor(
      onLogoutclick() {
       this.authService.logout();
       this.flashMessage.show('You are now logged out', {cssClass: 'alert-success', timeout: 4000 });
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     }
 
 }

@@ -36,10 +36,10 @@ document: ZDocument = {
     } else {
 
       value.slug = slugify(value.title);
-      console.log(value);
+      value.order = this.document.order;
       this.documentService.newDocument(value);
 
-      this.flashMessage.show('New client added', {
+      this.flashMessage.show('Added New Document', {
         cssClass: 'alert-success', timeout: 4000
       });
       // redirect to dashboard

@@ -11,6 +11,7 @@ import { DocumentService } from './services/document.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {MatIconModule} from '@angular/material/icon';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
@@ -55,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireAuthModule,
     FlashMessagesModule.forRoot(),
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [
     DocumentService,

@@ -50,6 +50,8 @@ body{font-family: 'Roboto', sans-serif;
     background: #32AAEB;
 }
 
+.e-richtexteditor .e-rte-content .e-content{min-height: 500px;}
+
 @media(min-width: 992px) {
 
     .desktop-menu-toggle{display: block;}

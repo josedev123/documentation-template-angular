@@ -32,6 +32,7 @@ export class EditDocumentComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.documentService.getDocument(this.id).subscribe( document => {
       this.document = document;
+      console.log(document);
     } );
   }
 
@@ -47,15 +48,14 @@ export class EditDocumentComponent implements OnInit {
 
       value.slug = slugify(value.title);
       value.id = this.route.snapshot.params.id;
+      value.order = this.document.order;
 
       if (!value.content) {
         value.content = '';
       }
-
-      console.log(value);
       this.documentService.updateDocument(value);
 
-      this.flashMessage.show('Updated' + value.title, {
+      this.flashMessage.show('Updated ' + value.title, {
         cssClass: 'alert-success', timeout: 4000
       });
       // redirect to dashboard
@@ -67,7 +67,7 @@ export class EditDocumentComponent implements OnInit {
   }
 
   onClickDelete() {
-    this.document = this.route.snapshot.params.id;
+    this.document.id = this.route.snapshot.params.id;
 
     this.documentService.deleteDocument(this.document);
       // redirect to dashboard

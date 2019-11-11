@@ -1,7 +1,7 @@
 <h2>Documents</h2>
-<a [routerLink]="['/admin/documents/add']" routerLinkActive="router-link-active" class="btn btn-primary">Add New</a>
-<ul class="dd-list">
-    <li *ngFor="let document of documents">
+<a [routerLink]="['/admin/documents/add']" routerLinkActive="router-link-active" class="btn btn-primary mb-4">Add New</a>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let document of documents" cdkDrag>        
         {{ document.title }} <a [routerLink]="['/admin/documents/edit', document.id]" routerLinkActive="router-link-active">Edit</a>  
-    </li>
-  </ul>
+    </div>
+  </div>

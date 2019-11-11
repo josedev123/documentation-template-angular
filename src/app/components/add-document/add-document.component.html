@@ -36,17 +36,7 @@
                 <ejs-richtexteditor [(value)]='document.content' name="content" [(ngModel)]="document.content" ></ejs-richtexteditor>
         
               </div>
-              <div class="form-group">
-                  <label for="order">Sort Order</label>
-                  <input 
-                    type="text"
-                    class="form-control" 
-                    name="order" 
-                    #title="ngModel" 
-                    [(ngModel)]="document.order"
-                  >
-                </div>
-            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+            <input type="submit" value="Save" class="btn btn-primary btn-block mt-3">
 
       </form>
       </div>

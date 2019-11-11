@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DocumentService } from 'src/app/services/document.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,18 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, documentService: DocumentService) {
 
-    this.router.navigate(['/view/introduction-background']) 
+documentService.getDocuments().subscribe(resp => {
 
+  var firstDocSlug = resp[0].slug;
+
+  this.router.navigate(['/view/'+firstDocSlug]) 
+
+
+});
+
+    
    }
 
   ngOnInit() {
