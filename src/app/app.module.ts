@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DocumentService } from './services/document.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
@@ -26,6 +27,7 @@ import { AddDocumentComponent } from './components/add-document/add-document.com
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.component';
 import { AuthGuard } from './guards/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FlashMessagesModule.forRoot(),
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DocumentService,

@@ -1,12 +1,22 @@
 <nav class="header-wrap">
+  <div class="logo-area">
             <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active" >
               <img src="https://cdn2.hubspot.net/hubfs/255845/OneIMS-Logo-OnDarkBlue-1.svg" alt="OneIMS" width="150">
           </a>
+
+          <div class="mobile-menu-toggle" (click)="showMobileMenu=!showMobileMenu">
+              <mat-icon>menu</mat-icon>
+            </div>
+            <div class="desktop-menu-toggle" (click)="showDesktopMenu=!showDesktopMenu">
+                <mat-icon>menu</mat-icon>
+              </div>
+        </div>
+
 </nav>
-<div class="body-area d-flex">
+<div class="body-area d-flex" [class.mobile-nav-active]="showMobileMenu" [class.desktop-nav-active]="showDesktopMenu">
     <nav class="left-sidebar">
           <div class="sidebar-sticky">
-      <app-view-navigation></app-view-navigation>
+      <app-view-navigation (click)="showMobileMenu=false"></app-view-navigation>
     </div>
     </nav>
 <main class="main-content">

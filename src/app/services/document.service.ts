@@ -32,8 +32,8 @@ export class DocumentService {
     return this.zDocuments;
   }
 
-  newDocument(client: ZDocument) {
-    this.zDocumentsCollection.add(client);
+  newDocument(document: ZDocument) {
+    this.zDocumentsCollection.add(document);
   }
 
   getDocument(id: string): Observable<ZDocument> {
@@ -56,7 +56,8 @@ export class DocumentService {
 
   deleteDocument(zDocument: ZDocument) {
     this.zDocumentDoc = this.afs.doc(`blueprint-1/${zDocument.id}`);
-    this.zDocumentDoc.delete();
+    console.log(this.zDocumentDoc);
+    this.afs.collection('blueprint-1').doc(zDocument.id).delete().then( res => console.log(res));
   }
 
 }

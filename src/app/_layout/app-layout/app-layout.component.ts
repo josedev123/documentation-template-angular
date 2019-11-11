@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppLayoutComponent implements OnInit {
 
+showMobileMenu = false;
+showDesktopMenu = true;
+
   constructor() { }
 
   ngOnInit() {

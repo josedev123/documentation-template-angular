@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ZDocument } from 'src/app/models/DocumentModel';
 import { DocumentService } from 'src/app/services/document.service';
@@ -25,7 +25,8 @@ export class EditDocumentComponent implements OnInit {
   constructor(
     private documentService: DocumentService,
     private route: ActivatedRoute,
-    private flashMessage: FlashMessagesService  ) { }
+    private flashMessage: FlashMessagesService,
+    private router: Router  ) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
@@ -58,10 +59,18 @@ export class EditDocumentComponent implements OnInit {
         cssClass: 'alert-success', timeout: 4000
       });
       // redirect to dashboard
-
+      this.router.navigate(['/admin/dashboard']);
     }
+
+
 
   }
 
+  onClickDelete() {
+    this.document = this.route.snapshot.params.id;
 
+    this.documentService.deleteDocument(this.document);
+      // redirect to dashboard
+    this.router.navigate(['/admin/dashboard']);
+  }
 }
