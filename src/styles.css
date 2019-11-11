@@ -22,7 +22,7 @@ body{font-family: 'Roboto', sans-serif;
 .left-sidebar{position: fixed;width:260px;left:0px; bottom:0px;top:0px;background: #32AAEB;padding-top:75px;overflow-y:auto;height: 100%;z-index: 5;}
 .main-content{margin-left:260px;max-width:1500px;padding:40px;}
 
-.left-sidebar ul li a{display: block;color:#fff;padding:8px 20px;font-size: 1.4rem;font-size:16px;
+.left-sidebar ul li a{display: block;color:#fff;padding:12px 20px;font-size: 1.4rem;font-size:16px;
     font-weight: 600;text-transform: uppercase;transition:all 300ms ease;}
 
     .left-sidebar ul li a:hover{text-decoration: none;background: rgba(255,255,255,0.3);}
@@ -38,6 +38,17 @@ body{font-family: 'Roboto', sans-serif;
 .content h4{font-size:1rem;}
 
 .mobile-menu-toggle, .desktop-menu-toggle{display: none;}
+
+.content h1{padding-bottom: 15px;margin-bottom: 30px;position: relative;}
+.content h1:after{content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 50px;
+    background: #32AAEB;
+}
 
 @media(min-width: 992px) {
 
